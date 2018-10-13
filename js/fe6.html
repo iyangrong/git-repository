@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+        .radio-button{
+            display:inline-block;
+            padding:10px;
+            cursor:pointer;
+        }
+        .active{
+            background:red;
+        }
+        .mask{
+            position:fixed;
+            top:0px;
+            left:0px;
+            width:100%;
+            height:100%;
+            background:black;
+            z-index:100;
+            opacity:0.0;
+        }
+        .mask-active{
+            opacity:0.8;
+        }
+        .player{
+            positive:relative;
+            z-index:101;
+            background-color:white;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="login-form">
+            <input id="id-input-username" type="text" value="gua">
+            <br>
+            <input id="id-input-password" type="password" value="xiao">
+            <br>
+            <button id="id-button-login">登录按钮</button>
+        </div>
+
+        <div class="radio-control">
+            <span class="radio-button active">html</span>
+            <span class="radio-button">js</span>
+            <span class="radio-button">css</span>
+        </div>
+        <script>
+        var buttons = document.querySelectorAll('.radio-button')
+        for(var i = 0; i < buttons.length; i++) {
+            var button = buttons[i]
+            button.addEventListener('click', function(event) {
+                var self = event.target
+                clearActive()
+                self.classList.add("active")
+            })
+        }
+        var clearActive = function() {
+            var active = document.querySelector('.active')
+            if(active != null) {
+                active.classList.remove("active")
+            }
+        }
+        </script>
+
+        <div class="player">
+            播放器
+        </div>
+
+        <button id="id-button-light" name="button">开关灯</button>
+
+        <div class="mask mask-active">
+        </div>
+
+        <script>
+        var light = document.querySelector('#id-button-light')
+        var log = function() {
+    console.log.apply(console, arguments)
+}
+        var kefg = function() {
+            log('开关灯')
+            var mask = document.querySelector('.mask')
+            if(mask.classList.contains('mask-active')) {
+                mask.classList.remove('mask-active')
+            } else {
+                mask.classList.add('mask-active')
+            }
+        }
+        light.addEventListener('click', kefg)
+        </script>
+
+    </body>
+</html>

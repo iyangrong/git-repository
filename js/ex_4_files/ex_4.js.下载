@@ -1,0 +1,1 @@
+alert(function (x, y) {return 2 * x + y;}(3, 7));

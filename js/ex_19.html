@@ -1,0 +1,62 @@
+<!doctype>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Die Rolling</title>
+        <style>
+        #die_1{
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+        }    
+        </style>
+    </head>
+    <body>
+        <input type="text" id="number"/>
+        <div id="die_1">
+            <input id="arrondi" type="button" value="arrondi"/>
+            <input id="arrondir" type="button" value="arrondir"/>
+            <input id="racine" type="button" value="racine"/>
+            <input id="sin" type="button" value="sin"/>
+            <input id="cos" type="button" value="cos"/>
+            <input id="tan" type="button" value="tan"/>
+            <input id="absolue" type="button" value="absolue"/>
+            <input id="logar" type="button" value="logar"/>
+        </div>
+        <div id="die"></div>
+        <script>
+            document.getElementById("arrondi").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.floor(f);
+            }
+            document.getElementById("arrondir").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.ceil(f);
+            }
+            document.getElementById("racine").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.sqrt(f);
+            }
+            document.getElementById("sin").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.sin(f);
+            }
+            document.getElementById("cos").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.cos(f);
+            }
+            document.getElementById("tan").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.tan(f);
+            }
+            document.getElementById("absolue").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.abs(f);
+            }
+            document.getElementById("logar").onclick = function(){
+                var f = document.getElementById("number").value;
+               document.getElementById("die").innerHTML = Math.log(f);
+            }
+        </script>
+    </body>
+</html>

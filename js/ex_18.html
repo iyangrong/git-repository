@@ -1,0 +1,29 @@
+<!doctype>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Die Rolling</title>
+        <style>
+            #die_1, #die_2, #die_3, #die_4, #die_5{ font-size: 800% }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input id="roller" type="button" value="Roll"/>
+        </div>
+        <div id="die_1"></div>
+        <div id="die_2"></div>
+        <div id="die_3"></div>
+        <div id="die_4"></div>
+        <div id="die_5"></div>
+        <script>
+            document.getElementById("roller").onclick = function(){
+                document.getElementById("die_1").innerHTML = "&#x268" + Math.floor(Math.random() * 6) + ";";
+                document.getElementById("die_2").innerHTML = "&#x268" + Math.floor(Math.random() * 6) + ";";
+                document.getElementById("die_3").innerHTML = "&#x268" + Math.floor(Math.random() * 6) + ";";
+                document.getElementById("die_4").innerHTML = "&#x268" + Math.floor(Math.random() * 6) + ";";
+                document.getElementById("die_5").innerHTML = "&#x268" + Math.floor(Math.random() * 6) + ";";
+            }
+        </script>
+    </body>
+</html>
